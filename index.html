@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>조이컨트리클럽</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="./script/jquery-1.12.4.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -55,37 +56,54 @@
             <div class="slider">
                 <div class="slide">
                     <div>
-                        <img src="./images/slide1.jpg" alt="">
-                        <img src="./images/slide2.jpg" alt="">
-                        <img src="./images/slide3.jpg" alt="">
+                        <img src="./images/slide1.jpg" alt="슬라이드 이미지">
+                        <div class="text_box">
+                            <h2>Lorem ipsum dolor sit animate.</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, vitae.</p>
+                        </div>
                     </div>
+                    <div><img src="./images/slide2.jpg" alt=""></div>
+                    <div><img src="./images/slide3.jpg" alt=""></div>
+                
                 </div>
                 <ul class="link">
                     <li>
-                        <div class="photo"><img src="./images/link1.jpg" alt=""></div>
-                        <p>link_1</p>
+                        <a href="#">
+                            <div class="photo"><img src="./images/link1.jpg" alt=""></div>
+                            <p>link_1</p>
+                        </a>
                     </li>
                     <li>
-                        <div class="photo"><img src="./images/link1.jpg" alt=""></div>
-                        <p>link_2</p>
+                        <a href="#">
+                            <div class="photo"><img src="./images/link2.jpg" alt=""></div>
+                            <p>link_2</p>
+                        </a>
                     </li>
                     <li>
-                        <div class="photo"><img src="./images/link1.jpg" alt=""></div>
-                        <p>link_3</p>
+                        <a href="#">
+                            <div class="photo"><img src="./images/link3.jpg" alt=""></div>
+                            <p>link_3</p>
+                        </a>
                     </li>
                 </ul>
             </div>
             <div class="banner">
-                <div class="photo"><img src="./images/link1.jpg" alt="배너 이미지"></div>
-                <div class="text_box">
-                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, exercitationem!</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe perspiciatis eos natus repellendus nostrum cum architecto laudantium, unde magnam nam.</p>
+                <div class="inner">
+                    <div class="photo"><img src="./images/link1.jpg" alt="배너 이미지"></div>
+                    <div class="text_box">
+                        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, exercitationem!</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe perspiciatis eos natus repellendus nostrum cum architecto laudantium, unde magnam nam.</p>
+                    </div>
+                    <div class="arrow">
+                        <a href="#">
+                            <img src="./images/arrow.png" alt="다음으로 가기 화살표">
+                        </a>
+                    </div>
                 </div>
-                <div class="arrow"><img src="./images/arrow.png" alt="다음으로 가기 화살표"></div>
             </div>
             <div class="tab">
                 <div class="tab_title">
-                    <h3>공지사항</h3>
+                    <h3 class="active">공지사항</h3>
                     <h3>갤러리</h3>
                 </div>
                 <div class="tab_content">
@@ -117,7 +135,9 @@
         </div>
     </div>
     <div class="footer">
-        <div class="f_logo"><img src="./images/logo.png" alt=""></div>
+        <div class="f_logo">
+            <img src="./images/logo.png" alt="">
+        </div>
         <div class="copyright">
             <div class="info">
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
@@ -130,5 +150,33 @@
             </div>
         </div>
     </div>
+    <script>
+        //메뉴
+        $('.gnb > li').hover(
+            function(){ 
+                $(this).find('ul').stop().slideDown()
+            },
+            function(){
+                $(this).find('ul').stop().slideUp()
+            },
+            )
+
+        //슬라이드
+        // setInterval(function(){
+        //     $('.slide').animate({top:-400},function(){
+        //         $('.slide div:first').appendTo('.slide')
+        //         $('slide').css('top',0)
+        //     })
+        // },3000)
+
+        //탭
+        $('.tab_title h3').click(function(){
+            $('.tab_title h3').removeClass('active')
+            $(this).addClass('active')
+
+            $('.tab_content ul').hide()
+            $('.tab_content ul').eq($(this).index()).show()
+        })
+    </script>
 </body>
 </html>
