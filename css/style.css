@@ -29,8 +29,8 @@ body{
 .left{
     width: 200px;
     padding: 0 10px;
+    border-right: 1px solid deeppink;
     position: relative;
-    border-right: 1px solid #999;
 }
 
 .logo{
@@ -43,34 +43,37 @@ body{
     margin-top: 140px;
     text-align: center;
 }
-
+.gnb > li:hover > a{
+    background-color: plum;
+}
 .gnb > li > a{
     display: block;
-    padding: 12px;
-    border: 1px solid #666;
+    padding: 10px;
+    border: 1px solid deeppink;
     margin-top: -1px;
 }
 
-
-.gnb > li:hover > a{
-    background-color: #ccc;
+.gnb ul{
+    /* display: none; */
 }
 
 .gnb ul{
-    border: 1px solid #999;
+    display: block;
+    border: 1px solid deeppink;
+    margin-top: -1px;
     display: none;
 }
 
 .gnb ul li a{
-    display: block;
     padding: 10px;
+    display: block;
+}
+.gnb ul li:hover a{
+    background-color: gainsboro;
 }
 
-.gnb ul li a:hover{
-    background-color: #ddd;
-}
 .member{
-    margin-top: 30px;
+    margin-top: 50px;
     display: flex;
 }
 
@@ -82,17 +85,15 @@ body{
     position: relative;
     font-size: 13px;
 }
-.member a:hover{
-    text-decoration: underline;
-}
+
 .member a:first-child::after{
-    content:'';
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
     width: 1px;
     height: 100%;
-    background-color: #666;
+    background-color: #222;
 }
 
 .right{
