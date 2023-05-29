@@ -29,7 +29,6 @@ body{
 .left{
     width: 200px;
     padding: 0 10px;
-    position: relative;
     border-right: 1px solid #999;
 }
 
@@ -40,15 +39,27 @@ body{
 }
 
 .gnb{
+    position: absolute;
     margin-top: 140px;
     text-align: center;
+    background-color: #ccc;
+    top: 0;
+    left: 10px;
+    width: 180px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.gnb > li{
+    position: relative;
 }
 
 .gnb > li > a{
     display: block;
     padding: 12px;
     border: 1px solid #666;
-    margin-top: -1px;
+    width: 180px;
+    background-color: #fff;
 }
 
 
@@ -57,20 +68,24 @@ body{
 }
 
 .gnb ul{
-    border: 1px solid #999;
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    display: flex;
 }
 
 .gnb ul li a{
     display: block;
     padding: 10px;
+    width: 180px;
 }
 
 .gnb ul li a:hover{
-    background-color: #ddd;
+    background-color: #222;
+    color: #fff;
 }
 .member{
-    margin-top: 30px;
+    margin-top: 350px;
     display: flex;
 }
 
