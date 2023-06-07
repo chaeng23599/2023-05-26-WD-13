@@ -30,7 +30,6 @@ body{
     width: 200px;
     padding: 0 10px;
     border-right: 1px solid deeppink;
-    position: relative;
 }
 
 .logo{
@@ -40,40 +39,50 @@ body{
 }
 
 .gnb{
+    position: absolute;
     margin-top: 140px;
     text-align: center;
+    background-color: #ccc;
+    top: 0;
+    left: 10px;
+    width: 180px;
+    z-index: 100;
+    overflow: hidden;
 }
-.gnb > li:hover > a{
-    background-color: plum;
+.gnb > li{
+    position: relative;
 }
 .gnb > li > a{
     display: block;
     padding: 10px;
     border: 1px solid deeppink;
+    width: 180px;
     margin-top: -1px;
+}
+.gnb > li:hover > a{
+    background-color: plum;
 }
 
 .gnb ul{
-    /* display: none; */
-}
-
-.gnb ul{
-    display: block;
-    border: 1px solid deeppink;
-    margin-top: -1px;
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    display: flex;
 }
 
 .gnb ul li a{
-    padding: 10px;
     display: block;
+    padding: 10px;
+    width: 180px;
 }
-.gnb ul li:hover a{
+
+
+.gnb ul li a:hover {
     background-color: gainsboro;
 }
 
 .member{
-    margin-top: 50px;
+    margin-top: 350px;
     display: flex;
 }
 
@@ -288,6 +297,7 @@ body{
 .footer{
     display: flex;
     border-top: 1px solid #999;
+    width: 100%;
 }
 .f_logo{
     width: 200px;
@@ -299,7 +309,7 @@ body{
 }
 
 .copyright{
-    width: calc(100%,-200%);
+    width: calc(100%,-200px);
     display: flex;
     align-items: center;
     justify-content: space-between;
